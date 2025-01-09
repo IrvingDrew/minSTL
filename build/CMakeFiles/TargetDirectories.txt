@@ -1,0 +1,3 @@
+D:/cppProjTest/minSTL/build/CMakeFiles/minSTL.dir
+D:/cppProjTest/minSTL/build/CMakeFiles/edit_cache.dir
+D:/cppProjTest/minSTL/build/CMakeFiles/rebuild_cache.dir

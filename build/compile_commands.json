@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/cppProjTest/minSTL/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/minSTL.dir/includes_CXX.rsp -g -std=gnu++11 -o CMakeFiles\\minSTL.dir\\src\\main.cpp.obj -c D:\\cppProjTest\\minSTL\\src\\main.cpp",
+  "file": "D:/cppProjTest/minSTL/src/main.cpp",
+  "output": "CMakeFiles/minSTL.dir/src/main.cpp.obj"
+}
+]
