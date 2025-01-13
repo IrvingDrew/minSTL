@@ -199,14 +199,19 @@ std::ostream &print(std::ostream &os, const T &t, const Args &...rest)
     return print(os, rest...);
 }
 
+using std::make_shared;
+using std::shared_ptr;
+
+shared_ptr<int> factory(int a)
+{
+    return make_shared<int>(a);
+}
+
 int main()
 {
-    // double *p = new double{2.3};
-    // DebugDelete d;
-    // d(p);
-    // std::unique_ptr<int, DebugDelete> p1(new int, DebugDelete());
+    shared_ptr<int> aa = make_shared<int>(34444);
 
-    // print(std::cout, 1, 3, "sda", "11");
-
+    std::vector<int> *p = new std::vector<int>({1, 2, 3, 4, 5, 6});
+    std::cout << *aa << std::endl;
     std::cout << minstl::m_true_type::value << std::endl;
 }
