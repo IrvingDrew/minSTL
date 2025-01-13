@@ -104,6 +104,7 @@ private:
 template <typename T>
 BlobPtr<T> &BlobPtr<T>::operator++()
 {
+    return *this;
 }
 
 template <typename T>
@@ -205,6 +206,42 @@ using std::shared_ptr;
 shared_ptr<int> factory(int a)
 {
     return make_shared<int>(a);
+}
+
+namespace myoop
+{
+    class Quote
+    {
+    public:
+        Quote() = default;
+        Quote(const std::string &book, double sales_price) : bookNo(book), price(sales_price) {}
+        std::string isbn() const { return bookNo; }
+
+        virtual double net_price(std::size_t n) const { return n * price; }
+        virtual ~Quote() = default;
+
+    private:
+        std::string bookNo;
+
+    protected:
+        double price = 0.0;
+    };
+
+    class Bulk_quote final : public Quote
+    {
+    public:
+        Bulk_quote() = default;
+        Bulk_quote(const std::string &book, double sales_price, std::size_t qty, double count);
+
+        double net_price(std::size_t n) const override;
+
+    private:
+        std::size_t min_qty = 0;
+        double discount = 0.0;
+    };
+
+    Bulk_quote::Bulk_quote(const std::string &book, double sales_price, std::size_t qty, double count) : Quote(book, sales_price), min_qty(qty), discount(count) {}
+
 }
 
 int main()
